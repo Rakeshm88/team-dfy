@@ -168,7 +168,42 @@ function Home() {
           </div>
         </div>
       </section>
-      
+      <div className="see-more-members-wrap">
+  {/* Place directly below your “Key Committee Members” listing */}
+{/* <div className="see-more-members-wrap">
+  <button
+    className="see-more-members-btn"
+    onClick={() => { window.location.href = '/members'; }}>
+    See More Committee Members
+  </button>
+</div> */}
+
+</div>
+<section className="sponsors-section">
+  <h2>Our Sponsors & Partners</h2>
+  <div className="sponsors-list">
+    <img src="/assets/sponsor1.png" alt="Sponsor 1" />
+    <img src="/assets/sponsor2.png" alt="Sponsor 2" />
+    {/* Add more sponsor logos as needed */}
+  </div>
+  <button className="become-sponsor-btn">Become a Sponsor</button>
+</section>
+
+<section className="prev-years-gallery">
+  <h2>Previous Years Gallery</h2>
+  <div className="gallery-thumbs">
+    <img src="/assets/year2023a.jpg" alt="2023 Utsav" />
+    <img src="/assets/year2022b.jpg" alt="2022 Utsav" />
+    <img src="/assets/year2021c.jpg" alt="2021 Utsav" />
+    {/* Add more images as needed */}
+  </div>
+  <button
+    className="see-more-btn"
+    onClick={() => { window.location.href = '/gallery'; }}>
+    See More Memories
+  </button>
+</section>
+
       {/* EVENTS & ACTIVITIES */}
       <section className="events-section">
         <h2>Upcoming Events</h2>
@@ -284,6 +319,9 @@ function Home() {
           </div>
         </div>
       </section>
+          <footer className="site-footer">
+  <span>© 2025 Dynamic Friends Youth Association | All Rights Reserved</span>
+</footer>
     </div>
   );
 }

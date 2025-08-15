@@ -649,3 +649,371 @@
     max-width: 100%;
   }
 }
+.site-footer {
+  width: 100%;
+  /* background: #000000; */
+  color: #000000;
+  text-align: center;
+  padding: 20px 0 12px 0;
+  font-size: 15px;
+  margin-top: 38px;
+  letter-spacing: 0.5px;
+  border-top: 5px solid #d2d224;
+}
+
+.prev-years-gallery {
+  background: #fff8e1;
+  border-radius: 10px;
+  padding: 32px 20px 24px 20px;
+  margin: 32px auto;
+  max-width: 900px;
+  box-shadow: 0 2px 16px rgba(252, 185, 44, 0.10);
+  text-align: center;
+}
+
+.prev-years-gallery h2 {
+  color: #de6e0a;
+  margin-bottom: 20px;
+}
+
+.gallery-thumbs {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+.gallery-thumbs img {
+  width: 140px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 7px;
+  box-shadow: 0 0 8px #ffe0b2;
+  transition: transform 0.2s;
+  cursor: pointer;
+}
+.gallery-thumbs img:hover {
+  transform: scale(1.04);
+}
+
+.see-more-btn {
+  padding: 8px 24px;
+  background: #ffa726;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.18s;
+}
+.see-more-btn:hover {
+  background: #ff7043;
+}
+.see-more-members-wrap {
+  text-align: center;
+  margin: 12px 8px 0 0;
+}
+.see-more-members-btn {
+  padding: 6px 18px;
+  background: #ffd54f;
+  color: #4e2401;
+  border: none;
+  border-radius: 4px;
+  font-weight: 500;
+  cursor: pointer;
+  box-shadow: 0 1px 6px rgba(222, 142, 10, 0.08);
+  transition: background 0.18s;
+  font-size: 14px;
+}
+.see-more-members-btn:hover {
+  background: #ffb300;
+}
+.sponsors-section {
+  background: #f4f7fa;
+  border-radius: 10px;
+  padding: 32px 20px 30px 20px;
+  margin: 36px auto 18px auto;
+  max-width: 900px;
+  text-align: center;
+}
+
+.sponsors-section h2 {
+  color: #207271;
+  margin-bottom: 20px;
+}
+
+.sponsors-list {
+  display: flex;
+  gap: 32px;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-bottom: 18px;
+}
+
+.sponsors-list img {
+  width: 110px;
+  height: 60px;
+  object-fit: contain;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 1px 8px #e0f2f1;
+  padding: 8px;
+  transition: box-shadow 0.2s;
+}
+
+.sponsors-list img:hover {
+  box-shadow: 0 3px 16px #b2dfdb;
+}
+
+.become-sponsor-btn {
+  padding: 7px 22px;
+  background: #207271;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 15px;
+  font-weight: 500;
+  cursor: pointer;
+  margin-top: 8px;
+  box-shadow: 0 1px 4px #b2dfdb;
+  transition: background 0.18s;
+}
+.become-sponsor-btn:hover {
+  background: #26c6da;
+}
+/* Enhanced Mobile Responsiveness */
+
+/* For devices up to 600px width */
+@media (max-width: 600px) {
+  /* Hero section stacked vertically and centered */
+  .hero {
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 3rem;
+    background-position: center bottom;
+  }
+
+  .hero-content {
+    width: 100%;
+    max-width: 320px;
+    text-align: center;
+    margin-bottom: 1.5rem;
+  }
+
+  .hero-content h1 {
+    font-size: 2rem;
+    max-width: 100%;
+  }
+
+  .hero-tagline {
+    font-size: 1rem;
+    max-width: 100%;
+  }
+
+  .hero-btn {
+    width: 100%;
+    max-width: 220px;
+    padding: 0.75rem 1.5rem;
+    font-size: 1.1rem;
+  }
+
+  .ganesh-illustration {
+    width: 180px;
+    margin-top: 1rem;
+  }
+
+  /* About section text and layout */
+  .about-story {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  /* Carousel full width */
+  .carousel-img {
+    max-width: 100%;
+    border-radius: 12px;
+  }
+
+  /* Committee members stacked vertically with bigger sizes */
+  .members-list {
+    flex-direction: column;
+    align-items: center;
+    gap: 1.2rem;
+  }
+
+  .member-card {
+    width: 90%;
+    max-width: 280px;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .member-photo {
+    width: 90px;
+    height: 90px;
+  }
+
+  .member-info {
+    text-align: left;
+    flex: 1;
+  }
+
+  /* Sponsors grid layout with smaller logos */
+  .sponsors-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    justify-items: center;
+  }
+
+  .sponsors-list img {
+    width: 90px;
+    height: auto;
+  }
+
+  .become-sponsor-btn {
+    width: 100%;
+    padding: 10px 0;
+    font-size: 1.1rem;
+  }
+
+  /* Previous years gallery thumbnails as grid */
+  .gallery-thumbs {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+
+  .gallery-thumbs img {
+    width: 100%;
+    height: auto;
+  }
+
+  /* See more buttons full width */
+  .see-more-btn,
+  .see-more-members-btn {
+    width: 100%;
+    font-size: 1.1rem;
+    padding: 10px 0;
+  }
+
+  /* Event gallery and images stacked */
+  .event-gallery {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .event-gallery img {
+    width: 90%;
+    margin-bottom: 12px;
+  }
+
+  /* Event video full width */
+  .event-video video {
+    width: 100%;
+    max-width: none;
+    border-radius: 12px;
+  }
+
+  /* Impact cards stacked */
+  .impact-cards {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .impact-card {
+    width: 90%;
+    max-width: 320px;
+  }
+
+  /* Devotional blockquote smaller font */
+  .devotional-section blockquote {
+    font-size: 1.1rem;
+    padding-left: 0.8rem;
+  }
+
+  /* Social icons smaller */
+  .social-buttons a img {
+    width: 36px;
+    height: 36px;
+  }
+
+  /* Instagram embed responsive */
+  .insta-embed iframe {
+    width: 100% !important;
+    height: 280px !important;
+  }
+
+  /* Contact form full width inputs and button */
+  .contact-form {
+    max-width: 100%;
+    width: 100%;
+  }
+
+  .contact-form input,
+  .contact-form textarea {
+    width: 100%;
+    font-size: 1rem;
+    padding: 0.8rem 12px;
+  }
+
+  .contact-form button {
+    width: 100%;
+    font-size: 1.1rem;
+    padding: 12px 0;
+  }
+
+  /* Contact details stacked */
+  .contact-details {
+    flex-direction: column;
+    gap: 1.5rem;
+    align-items: center;
+  }
+
+  /* Google Maps iframe full width */
+  .contact-details iframe {
+    width: 100% !important;
+    height: 180px !important;
+  }
+
+  /* WhatsApp QR smaller */
+  .contact-details img {
+    width: 110px;
+    height: 110px;
+  }
+
+  /* Footer size adjustments */
+  .site-footer {
+    font-size: 14px;
+    padding: 14px 0;
+  }
+}
+
+/* Very small screens adjustments (less than 400px) */
+@media (max-width: 400px) {
+  .hero-content h1 {
+    font-size: 1.6rem;
+  }
+
+  .hero-tagline {
+    font-size: 0.9rem;
+  }
+
+  .hero-btn {
+    padding: 0.5rem 1rem;
+    font-size: 0.95rem;
+  }
+
+  .member-card {
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+  }
+
+  .member-info {
+    text-align: center;
+  }
+}
