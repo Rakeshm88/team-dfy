@@ -1,5 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
+// import { useNavigate } from 'react-router-dom';
 import './Home.css';
+
 
 // Dummy images for carousel. Replace with your own.
 const celebrationImages = [
@@ -49,7 +51,8 @@ function useCountdown(targetDate) {
 }
 
 
-function Home() {
+function Home(props) {
+  // const navigate = useNavigate();x
   const aboutRef = useRef(null);
   const countdown = useCountdown(new Date('2025-08-27T00:00:00'));
 
@@ -91,9 +94,6 @@ function Home() {
           <p className="hero-tagline">
             Where devotion meets unity, and tradition meets new energy.
           </p>
-          <button className="hero-btn" onClick={scrollToAbout}>
-            Join Us
-          </button>
         </div>
         <div className="ganesh-illustration">
           {/* Replace with animated SVG or Ganesh Ji image */}
@@ -103,9 +103,6 @@ function Home() {
             className="ganesh-image"
           />
         </div>
-        {/* Example: subtle mandala background */}
-        {/* <div className="mandala-bg" /> */}
-        {/* For video bg, use <video ...> */}
       </section>
       
       {/* WELCOME MESSAGE */}
@@ -130,8 +127,6 @@ function Home() {
             </p>
             <ul>
               <li>🪔 Grand Ganesh Utsav: music, dance & rituals</li>
-              <li>🤝 Social work: blood drives, charity, clean-up</li>
-              <li>🎉 Cultural: competitions, talent shows, workshops</li>
               <li>🎉 Donations: Village development donations</li>
 
             </ul>
@@ -152,98 +147,30 @@ function Home() {
             </div>
           </div>
         </div>
-        {/* Committee Key Members */}
-        <div className="key-members">
-          <h3>Key Committee Members</h3>
-          <div className="members-list">
-            {keyMembers.map((m) => (
-              <div className="member-card" key={m.name}>
-                <img src={m.photo} alt={m.name} className="member-photo" />
-                <div className="member-info">
-                  <div className="member-name">{m.name}</div>
-                  <div className="member-role">{m.role}</div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
+        
       </section>
-      <div className="see-more-members-wrap">
-  {/* Place directly below your “Key Committee Members” listing */}
-{/* <div className="see-more-members-wrap">
-  <button
-    className="see-more-members-btn"
-    onClick={() => { window.location.href = '/members'; }}>
-    See More Committee Members
-  </button>
-</div> */}
-
-</div>
-<section className="sponsors-section">
-  <h2>Our Sponsors & Partners</h2>
-  <div className="sponsors-list">
-    <img src="/assets/sponsor1.png" alt="Sponsor 1" />
-    <img src="/assets/sponsor2.png" alt="Sponsor 2" />
-    {/* Add more sponsor logos as needed */}
-  </div>
-  <button className="become-sponsor-btn">Become a Sponsor</button>
-</section>
+  
 
 <section className="prev-years-gallery">
   <h2>Previous Years Gallery</h2>
   <div className="gallery-thumbs">
-    <img src="/assets/year2023a.jpg" alt="2023 Utsav" />
+    <img src="/assets/year2024d.jpg" alt="2021 Utsav" />
+    <img src="/assets/year2023c.jpg" alt="2023 Utsav" />
     <img src="/assets/year2022b.jpg" alt="2022 Utsav" />
-    <img src="/assets/year2021c.jpg" alt="2021 Utsav" />
+    <img src="/assets/year2021a.jpg" alt="2021 Utsav" />
+
     {/* Add more images as needed */}
   </div>
   <button
     className="see-more-btn"
-    onClick={() => { window.location.href = '/gallery'; }}>
+                    onClick={() => props.setSelectedSection('gallery')}  // Use prop here
+>
     See More Memories
   </button>
 </section>
-
-      {/* EVENTS & ACTIVITIES */}
-      <section className="events-section">
-        <h2>Upcoming Events</h2>
-        <div className="countdown-box">
-          <span>Ganesh Chaturthi Countdown:</span>
-          <b>{countdown}</b>
-        </div>
-        {/* Gallery: Replace with a real gallery/slider */}
-        <div className="event-gallery">
-          <img src="/assets/event1.jpg" alt="Event" />
-          <img src="/assets/event2.jpg" alt="Event" />
-          <img src="/assets/event3.jpg" alt="Event" />
-        </div>
-        <div className="event-video">
-          {/* Short event highlight, use your own video */}
-          <video src="/assets/highlight.mp4" controls width="320" />
-        </div>
-      </section>
-      
-      {/* ACHIEVEMENTS */}
-      <section className="achievements-section">
-        <h2>Community Impact</h2>
-        <div className="impact-cards">
-          <div className="impact-card">
-            <span role="img" aria-label="People">🧑‍🤝‍🧑</span>
-            <b>500+</b>
-            <p>Participants in Ganesh Chaturthi</p>
-          </div>
-          <div className="impact-card">
-            <span role="img" aria-label="Charity">🎁</span>
-            <b>20+</b>
-            <p>Charity Events</p>
-          </div>
-          <div className="impact-card">
-            <span role="img" aria-label="Smile">😊</span>
-            <b>1000+</b>
-            <p>Smiles Spread</p>
-          </div>
-        </div>
-      </section>
+<button className="hero-btn" onClick={scrollToAbout}>
+            Join Us
+          </button>
       
       {/* DEVOTIONAL */}
       <section className="devotional-section">
@@ -270,34 +197,23 @@ function Home() {
           {/* Add more as needed */}
         </div>
         {/* Example: Instagram Embed */}
-        <div className="insta-embed">
+        {/* <div className="insta-embed">
           {/* Replace src with actual embed */}
-          <iframe
-            src="https://www.instagram.com/p/DADW4DCPjvS/embed"
-            width="320"
-            height="400"
-            frameBorder="0"
-            scrolling="no"
-            allowtransparency="true"
-            title="Instagram Feed"
-          ></iframe>
-        </div>
+           {/* <iframe
+          src="https://www.instagram.com/p/DAlFU1mPM79/embed"
+          width="100%"
+          height="600"        // Increase if content still cropped
+          frameBorder="0"
+          scrolling="no"
+          allowtransparency="true"
+          title="Instagram Feed"
+          style={{ borderRadius: "16px", background: "#fff" }}
+        ></iframe>
+        </div> */} 
       </section>
       
       {/* CONTACT & JOIN */}
       <section className="contact-section">
-        <h2>Contact & Join</h2>
-        <form
-          className="contact-form"
-          onSubmit={e => {
-            e.preventDefault();
-            alert('Thank you for reaching out!');
-          }}>
-          <input type="text" placeholder="Your Name" required />
-          <input type="email" placeholder="Your Email" required />
-          <textarea placeholder="How would you like to help?" required />
-          <button type="submit">Send</button>
-        </form>
         <div className="contact-details">
           <div>
             <h4>Visit Us:</h4>
@@ -320,7 +236,7 @@ function Home() {
         </div>
       </section>
           <footer className="site-footer">
-  <span>© 2025 Dynamic Friends Youth Association | All Rights Reserved</span>
+  <span>© 2025 Dynamic Friends Youth Association</span>
 </footer>
     </div>
   );

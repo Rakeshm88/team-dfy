@@ -1,25 +1,29 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './App.css';
 
 import Home from './components/Home';
 import Members from './components/members';
-import Details from './components/details';
-import Contact from './components/contact';
+import Gallery from './components/Gallery';
+import Events from './components/events';
 import Committee from './components/committee';
 
 function App() {
   const [selectedSection, setSelectedSection] = useState('home');
+  
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [selectedSection]);
 
 const renderSection = () => {
   switch (selectedSection) {
     case 'home':
-        return <Home />;
+      return <Home setSelectedSection={setSelectedSection} />;  // Pass prop here
     case 'members':
       return <Members />;
-    case 'details':
-      return <Details />;
-    case 'contact':
-      return <Contact />;
+    case 'gallery':
+      return <Gallery />;
+    case 'events':
+      return <Events />;
     case 'committee':
       return <Committee />;
     default:
@@ -33,8 +37,8 @@ const renderSection = () => {
         <ul>
           <li onClick={() => setSelectedSection('home')}>Home</li>
           <li onClick={() => setSelectedSection('members')}>Members</li>
-          <li onClick={() => setSelectedSection('details')}>Details</li>
-          <li onClick={() => setSelectedSection('contact')}>Contact Details</li>
+          <li onClick={() => setSelectedSection('gallery')}>Gallery</li>
+          <li onClick={() => setSelectedSection('events')}>Events</li>
           <li onClick={() => setSelectedSection('committee')}>Committee Details</li>
         </ul>
       </nav>

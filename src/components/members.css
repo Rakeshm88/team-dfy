@@ -1,30 +1,108 @@
-.members-grid {
+.members-container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.toggle-buttons {
   display: flex;
-  flex-wrap: wrap;
-  gap: 1.5rem;
   justify-content: center;
+  margin-bottom: 25px;
+  gap: 15px;
+}
+
+.toggle-buttons button {
+  padding: 10px 25px;
+  font-size: 16px;
+  border: 2px solid #d4a017; /* golden border */
+  border-radius: 5px;
+  background-color: white;
+  color: #6b3e00; /* dark golden */
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.toggle-buttons button.active,
+.toggle-buttons button:hover {
+  background-color: #d4a017; /* golden background */
+  color: white;
+}
+
+.members-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* Two per row on mobile */
+  gap: 16px;
   margin-top: 2rem;
 }
 
-.member-card {
-  background: #fff;
-  border-radius: 10px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.10);
-  padding: 1rem;
-  text-align: center;
-  width: 140px;
+@media (min-width: 600px) {
+  .members-grid {
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 20px;
+  }
 }
 
-.photo-placeholder img {
+.member-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #fff8dc;
+  border-radius: 12px;
+  padding: 12px;
+  text-align: center;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+  width: 100%;            /* Full grid column width */
+  /* Remove max-width: 100px; */
+  margin: 0;               /* Remove auto margin */
+  box-sizing: border-box;  /* Keep sizing correct */
+}
+
+.photo-placeholder img,
+.member-photo {
   width: 60px;
   height: 60px;
   border-radius: 50%;
-  margin-bottom: 0.5rem;
-  background: #eee;
+  object-fit: cover;
+  margin-bottom: 8px;
+  border: 2px solid #d4a017;
 }
 
 .member-name {
-  font-size: 1.10rem;
-  font-weight: 500;
-  color: #333;
+  font-weight: bold;
+  color: #6b3e00;
+  font-size: 1rem;
+  margin: 0;
+}
+
+.key-member .member-info {
+  margin-top: 5px;
+}
+
+.member-role {
+  font-size: 14px;
+  color: #a67c00;
+}
+
+.member-photo {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  border: 2px solid #cdad3b;
+  object-fit: cover;
+  background: #faf3d2;
+  display: block;
+  margin: 0 auto 12px auto;
+}
+.key-member .member-info, .member-card .member-info {
+  text-align: center;
+}
+.member-name {
+  font-weight: bold;
+  font-size: 1.1em;
 }

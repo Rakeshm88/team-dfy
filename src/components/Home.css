@@ -1,4 +1,52 @@
 /* Home.css */
+@media (max-width: 768px) {
+  .hero {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 2rem 1rem 2.5rem;
+    text-align: left;
+  }
+
+  .ganesh-golden {
+    font-size: 2.1rem;
+    max-width: 90vw;
+    margin: 0 0 0.8rem 0;
+  }
+
+  .ganesh-illustration,
+  .ganesh-image {
+    width: 60vw;
+    max-width: 250px;
+    margin-top: 1.2rem;
+    align-self: center;
+  }
+
+  .hero-tagline {
+    font-size: 1.05rem;
+    max-width: 90vw;
+  }
+
+  .hero-btn {
+    font-size: 1rem;
+    padding: 0.5rem 1.4rem;
+  }
+
+  /* Optional: Add spacing between text and image */
+  .hero > *:not(:last-child) {
+    margin-bottom: 1.1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero {
+    padding: 1.2rem 0.7rem 2rem;
+  }
+  .ganesh-illustration,
+  .ganesh-image {
+    width: 90vw;
+    max-width: 180px;
+  }
+}
 
 .home-root {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -96,24 +144,31 @@
 
 /* Welcome Message */
 .welcome-msg {
-  max-width: 650px;
-  margin: 3rem auto 5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   text-align: center;
-  color: #5A3E05;
-  animation: fadeInUp 1s ease forwards;
+  background: none;           /* Ensure no unintended background */
+  padding: 32px 12px 24px 12px;  /* Extra top and bottom space, side padding for mobile */
 }
 
 .welcome-msg h2 {
-  font-size: 2rem;
-  font-family: 'Gurajada', serif;
-  color: #B26800;
-  margin-bottom: 0.5em;
-}
+  font-size: 1.5rem;          /* Optimize for mobile */
+  font-weight: bold;
+  margin-bottom: 16px;        /* Good gap below title */
+  color: #4a2b00;             /* Dark golden/brown for warmth */
+  letter-spacing: 1px;
+  text-shadow: 0 2px 10px rgba(212,160,23,0.10); /* Gentle shadow for contrast */
+} 
 
 .welcome-msg p {
-  font-size: 1.15rem;
-  font-style: italic;
-  line-height: 1.5;
+  max-width: 350px;           /* Prevent long lines */
+  margin: 0 auto;
+  font-size: 1rem;
+  color: #33343a;
+  margin-bottom: 0;
+  line-height: 1.6;
 }
 
 /* About Section */
@@ -122,6 +177,7 @@
   margin: 0 auto 6rem;
   padding: 0 1rem;
   animation: fadeIn 1s ease forwards;
+  align-items: center;
 }
 
 .about-section h2 {
@@ -796,28 +852,76 @@
   }
 
   .hero-content {
-    width: 100%;
-    max-width: 320px;
-    text-align: center;
-    margin-bottom: 1.5rem;
-  }
+  display: flex;
+  flex-direction: column;
+  align-items: center;    /* Center all child items horizontally */
+  justify-content: center;
+  text-align: center;
+  padding: 32px 16px 24px 16px;  /* Adequate padding for mobile */
+  max-width: 400px;              /* Controls section width */
+  margin: 0 auto;                /* Centers the whole block */
+}
 
-  .hero-content h1 {
-    font-size: 2rem;
-    max-width: 100%;
-  }
+.hero-content h1 {
+  margin: 0 0 18px 0;             /* Space below headline */
+  font-size: 2rem;
+  font-weight: 900;
+  line-height: 1.1;
+  letter-spacing: 1px;
+  text-align: center;
+}
 
+  .ganesh-golden {
+  display: inline-block;
+  font-size: 2rem;
+  font-weight: 1000;
+  color: #4a2b00;
+  text-shadow: 0 2px 10px rgba(214,160,23,0.12);
+}
+
+.hero-tagline {
+  font-size: 1.07rem;
+  margin: 0 0 30px 0;
+  color: #423001;
+  font-style: italic;
+  line-height: 1.5;
+  max-width: 350px;
+}
+
+.hero-btn {
+  background-color: #a66d00;
+  color: #fff;
+  border: none;
+  padding: 13px 34px;
+  border-radius: 24px;
+  font-weight: 700;
+  font-size: 1.04rem;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(166, 109, 0, 0.13);
+  margin-bottom: 24px;
+  align-items: center;    /* Center all child items horizontally */
+
+}
+
+/* Responsive: even better fit on mobile */
+@media (max-width: 480px) {
+  .hero-content {
+    padding: 18px 8px 16px 8px;
+    max-width: 99vw;
+  }
+  .hero-content h1,
+  .ganesh-golden {
+    font-size: 1.35rem;
+  }
   .hero-tagline {
-    font-size: 1rem;
-    max-width: 100%;
+    font-size: 0.98rem;
+    max-width: 92vw;
   }
-
   .hero-btn {
-    width: 100%;
-    max-width: 220px;
-    padding: 0.75rem 1.5rem;
-    font-size: 1.1rem;
+    padding: 10px 20px;
+    font-size: 1rem;
   }
+}
 
   .ganesh-illustration {
     width: 180px;

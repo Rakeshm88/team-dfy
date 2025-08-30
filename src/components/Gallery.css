@@ -1,0 +1,62 @@
+.gallery-page {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 24px 14px;
+  font-family: Arial, sans-serif;
+}
+.gallery-page h1 {
+  font-size: 2.1rem;
+  font-weight: bold;
+  margin-bottom: 30px;
+  text-align: left;
+}
+.year-gallery {
+  margin-bottom: 36px;
+}
+.year-heading {
+  text-align: left;
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 14px;
+}
+
+.photos-row img {
+  width: 130px;
+  height: 130px;
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.09);
+}
+
+.photos-row {
+  display: flex;
+  gap: 18px;
+  flex-wrap: wrap;
+  margin-bottom: 14px;
+  /* Set a width to keep button aligned */
+  max-width: 450px;
+}
+
+.see-more-btn {
+  display: block;
+  margin-left: 0;                  /* For left align: use margin-left:0; */
+  margin-right: auto;
+  margin-top: 12px;
+  width: 200px;                    /* Optional: set width, or remove for auto width */
+  background-color: #d4a017;
+  color: white;
+  border: none;
+  padding: 12px 0;
+  border-radius: 16px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.09);
+}
+
+/* Center the button under the photos if preferred */
+.see-more-btn.center {
+  margin-left: auto;
+  margin-right: auto;
+}
